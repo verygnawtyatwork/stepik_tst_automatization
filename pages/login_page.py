@@ -9,7 +9,10 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         # реализуйте проверку на корректный url адрес
-        assert True
+        current_link = self.current_url
+        substring = "login"
+        comparison =  substring in current_link
+        assert comparison, "'login' substring is not present in URL"
 
     def should_be_login_form(self):
         # реализуйте проверку, что есть форма логина
